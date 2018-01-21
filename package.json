@@ -1,0 +1,29 @@
+{
+  "name": "capmon",
+  "version": "0.0.1",
+  "description": "Simple crypto tool \u001b[D\u001b[tion: ",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miklax/capmon.git"
+  },
+  "keywords": [
+    "crypto",
+    "marketcap"
+  ],
+  "author": "Mihail Miklasevskij\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[š",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/miklax/capmon/issues"
+  },
+  "homepage": "https://github.com/miklax/capmon#readme",
+  "devDependencies": {
+    "electron": "^1.7.10"
+  },
+  "dependencies": {
+    "axios": "^0.17.1"
+  }
+}
