@@ -1,0 +1,59 @@
+/* * {
+  border: 1px solid red;
+} */
+
+body {
+    background: #27262e;
+    color:#e5e0cc;
+    margin:0;
+    text-align: center;
+}
+
+#mcval {
+  margin: 0;
+  padding-top: 10px;
+  text-align: center;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.3em;
+}
+
+.dugme {
+  /* font */
+  color: black;
+  font-size: 20px;
+
+  /* remove blue underline */
+  text-decoration: none;
+
+  /* border */
+  border: 1px solid black;
+  border-radius: 10px;
+
+  /* transitions */
+  transition-duration: .2s;
+
+  /* other */
+  background-color: white;
+  padding: 4px 30px;
+}
+
+.dugme:hover {
+  /* update text color and background color */
+  color:white;
+  background-color:black;
+
+   /* transitions */
+  transition-duration: .2s;
+}
+
+
+
+
+/* svetlo plava za dugme
+#38a7e1
+
+zelena
+#49c398
+
+crvena
+#f42b56 */

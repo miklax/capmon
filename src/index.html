@@ -3,9 +3,21 @@
   <head>
     <meta charset="UTF-8">
     <title>Marketcap voice announcement tool</title>
+    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="../node_modules/milligram/dist/milligram.min.css"> -->
     <link rel="stylesheet" href="../assets/css/main.css">
   </head>
   <body>
-    <h1 id="mcval">$000.000.000</h1>
+    <div class="container">
+      <div class="cap-value">
+        <p id="mcval">$ 0.000.000.000</p>
+      </div>
+      <div class="form-obj">
+            <input type="checkbox" id="voice" onclick="playVoice()">Voice announcements every 5 minutes
+            <br >
+            <input class="dugme" type="submit" value="Pop-up monitor">
+      </div>
+    </div>
   </body>
+  <script type="text/javascript" src="index.js"></script>
 </html>
