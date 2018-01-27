@@ -6,23 +6,29 @@ const axios = require('axios');
 
 var mcvalue = document.getElementById('mcval');
 var oldValue = 0;
+var intervalStatus = null;
 
 //function Voice
 function playVoice(){
+
+  alert(mcvalue.innerHTML.slice(0,-12))
   if(document.getElementById('voice').checked){
-    setInterval(() => {
-      let msg = new SpeechSynthesisUtterance('billions');
+    intervalStatus = setInterval(function(){
+      let msg = new SpeechSynthesisUtterance(mcvalue.innerHTML.slice(0,-12));
       window.speechSynthesis.speak(msg);
-    }, 500000);
-  };
+    }, 5000);
+  } else {
+    clearInterval(intervalStatus);
+  }
 };
 
-//get market cap - refresh is 5 min from API
+// get market cap - refresh is 5 min from API
 function getMarketCapVal() {
   axios.get('https://api.coinmarketcap.com/v1/global/')
   .then(result => {
     const currentVal = result.data.total_market_cap_usd;
-    mcvalue.innerHTML = '$ ' + currentVal.toLocaleString('en');
+    // mcvalue.innerHTML = '$ ' + currentVal.toLocaleString('en');
+    mcvalue.innerHTML = currentVal.toLocaleString('en');
 
     if (currentVal > oldValue)
       mcvalue.style.color = "#49c398";
@@ -31,6 +37,8 @@ function getMarketCapVal() {
 
     oldValue = currentVal;
   })
+
+
 }
 
 getMarketCapVal();

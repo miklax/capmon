@@ -9,7 +9,7 @@ body {
     text-align: center;
 }
 
-#mcval {
+.main-clock{
   margin: 0;
   padding-top: 10px;
   text-align: center;
