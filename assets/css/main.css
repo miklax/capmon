@@ -1,50 +1,73 @@
+@import url('https://fonts.googleapis.com/css?family=Orbitron|Roboto');
+
 /* * {
-  border: 1px solid red;
+  border: 1px solid yellow;
 } */
 
 body {
-    background: #27262e;
-    color:#e5e0cc;
     margin:0;
-    text-align: center;
+    font-family: 'Roboto'
+}
+
+.container {
+  background: #27262e;
+  color:#e5e0cc;
 }
 
 .main-clock{
   margin: 0;
-  padding-top: 10px;
+  padding: 10px 0;
   text-align: center;
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Orbitron';
   font-size: 2.3em;
 }
 
-.dugme {
-  /* font */
-  color: black;
-  font-size: 20px;
+.form-obj{
+  padding: 10px;
+}
 
-  /* remove blue underline */
+
+/* *****************POPUP***************** */
+.container-popup{
+  position: relative;
+  color: white;
+  font-family: Orbitron;
+  display: inline-block;
+}
+
+.container-popup .dataInfo{
+  display: inline-block;
+  height: 25px;
+  line-height: 25px;
+  padding-left: 5px;
+  /* padding: 5px; */
+  width: 235px;
+  background: rgba(0,0,0,0.6);
+  cursor: move;
+  -webkit-app-region: drag;
+}
+
+.container-popup a{
+  position: absolute;
+  display: inline-block;
+  z-index: 100;
+  width: 21px;
+  height: 21px;
+  margin: 2px;
+  right: 0;
+  top: 0;
+  text-align: center;
+  line-height: 20px;
+  background: rgba(255,0,0,0.5);
+  color: white;
   text-decoration: none;
-
-  /* border */
-  border: 1px solid black;
-  border-radius: 10px;
-
-  /* transitions */
-  transition-duration: .2s;
-
-  /* other */
-  background-color: white;
-  padding: 4px 30px;
 }
 
-.dugme:hover {
-  /* update text color and background color */
-  color:white;
-  background-color:black;
 
-   /* transitions */
-  transition-duration: .2s;
-}
+
+
+
+
 
 
 

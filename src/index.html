@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Marketcap voice announcement tool</title>
-    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="../node_modules/milligram/dist/milligram.min.css"> -->
-    <link rel="stylesheet" href="../assets/css/main.css">
-  </head>
-  <body>
-    <div class="container">
-      <div class="cap-value">
-        <p class="main-clock">$ <span id="mcval">0.000.000.000</span></p>
-      </div>
-      <div class="form-obj">
-            <input type="checkbox" id="voice" onclick="playVoice()">Voice announcements every 5 minutes
-            <br >
-            <input class="dugme" type="submit" value="Pop-up monitor">
-      </div>
+<head>
+  <meta charset="UTF-8">
+  <title>Marketcap voice announcement tool</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+  <div class="container">
+    <div class="cap-value">
+      <p class="main-clock">$ <span id="mcval">0.000.000.000</span></p>
     </div>
-  </body>
-  <script type="text/javascript" src="index.js"></script>
+    <div class="form-obj">
+      <input type="checkbox" id="voice" onclick="playVoice()">5 minute voice announcement
+      <br >
+      <button name="button" onclick="openOverhead()">Monitor</button>
+    </div>
+  </div>
+</body>
+<script type="text/javascript" src="index.js"></script>
 </html>
