@@ -51,8 +51,7 @@ function openOverhead(){
     transparent: true,
     alwaysOnTop: true,
     width: 250,
-    height: 25,
-    isResizable: false
+    height: 25
   });
 
   winpopup.isResizable(false);

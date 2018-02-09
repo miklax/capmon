@@ -38,12 +38,13 @@ body {
 .container-popup .dataInfo{
   display: inline-block;
   height: 25px;
+  cursor: move;
+  -webkit-app-cursor: move;
   line-height: 25px;
   padding-left: 5px;
   /* padding: 5px; */
   width: 235px;
   background: rgba(0,0,0,0.6);
-  cursor: move;
   -webkit-app-region: drag;
 }
 
@@ -67,13 +68,6 @@ body {
 .donations-container {
   margin: 20px;
 }
-
-
-
-
-
-
-
 
 /* svetlo plava za dugme
 #38a7e1
