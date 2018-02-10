@@ -78,9 +78,6 @@ app.on('activate', () => {
 
 //about window
 
-
-
-
 function createAbout(){
   const htmlPath = path.join('file://', __dirname, 'src/about.html');
   let aboutw = new BrowserWindow({
