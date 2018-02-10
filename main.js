@@ -1,4 +1,4 @@
-const {app, BrowserWindow} = require('electron')
+const {app, BrowserWindow, Menu} = require('electron')
 const path = require('path')
 const url = require('url')
 
@@ -24,6 +24,37 @@ function createWindow () {
 
     win = null
   })
+
+  var template = Menu.buildFromTemplate([
+  {
+    label: 'Info',
+    submenu: [
+      {
+        label: 'Donation',
+        click() {
+          createDonation();
+        }
+       },
+      {
+        label: 'About',
+        click() {
+          createAbout();
+        }
+     },
+      {type: 'separator'},
+      {
+        label: 'Exit',
+        click() {
+          app.quit();
+        }
+      },
+    ]
+  },
+
+]);
+
+Menu.setApplicationMenu(template);
+
 }
 
 app.on('ready', createWindow)
@@ -44,3 +75,37 @@ app.on('activate', () => {
     createWindow()
   }
 })
+
+//about window
+
+
+
+
+function createAbout(){
+  const htmlPath = path.join('file://', __dirname, 'src/about.html');
+  let aboutw = new BrowserWindow({
+    width: 450,
+    height: 350
+  });
+
+  aboutw.isResizable(false);
+
+  aboutw.on('close', function() { win = null });
+  aboutw.loadURL(htmlPath);
+  aboutw.show();
+}
+
+//donate window
+function createDonation(){
+  const htmlPath = path.join('file://', __dirname, 'src/donations.html');
+  let windonate = new BrowserWindow({
+    width: 450,
+    height: 350
+  });
+
+  windonate.isResizable(false);
+
+  windonate.on('close', function() { win = null });
+  windonate.loadURL(htmlPath);
+  windonate.show();
+}
