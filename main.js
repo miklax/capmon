@@ -23,6 +23,8 @@ function createWindow () {
   win.on('closed', () => {
 
     win = null
+    app.quit(); //close all windows and quit.
+
   })
 
   var template = Menu.buildFromTemplate([
@@ -30,7 +32,7 @@ function createWindow () {
     label: 'Info',
     submenu: [
       {
-        label: 'Donation',
+        label: 'Donate',
         click() {
           createDonation();
         }

@@ -6,12 +6,13 @@
 
 body {
     margin:0;
-    font-family: 'Roboto'
+    font-family: 'Roboto';
+    background: #27262e;
+    color:#e5e0cc;
 }
 
 .container {
-  background: #27262e;
-  color:#e5e0cc;
+
 }
 
 .main-clock{
@@ -68,6 +69,24 @@ body {
 .donations-container {
   margin: 20px;
 }
+
+.donations-container a{
+  color: white;
+}
+
+.donate-address{
+  line-height : 30px;
+}
+
+/* ABOUT */
+.about-container{
+  margin: 20px;
+}
+
+.about-container a{
+  color: white;
+}
+
 
 /* svetlo plava za dugme
 #38a7e1
