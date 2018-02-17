@@ -1,4 +1,4 @@
-const {app, BrowserWindow, Menu} = require('electron')
+const {app, BrowserWindow, Menu, ipcMain} = require('electron')
 const path = require('path')
 const url = require('url')
 
@@ -79,7 +79,6 @@ app.on('activate', () => {
 })
 
 //about window
-
 function createAbout(){
   const htmlPath = path.join('file://', __dirname, 'src/about.html');
   let aboutw = new BrowserWindow({
@@ -108,3 +107,9 @@ function createDonation(){
   windonate.loadURL(htmlPath);
   windonate.show();
 }
+
+// IPC IPC IPC
+ipcMain.on('async-mc', (event, arg) => {
+  console.log('recieve ' + arg)
+  event.sender.send('async-mc-resp', arg)
+})

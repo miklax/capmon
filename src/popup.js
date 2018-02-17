@@ -1,8 +1,15 @@
-const electron = require('electron');
+const { ipcRenderer, remote } = require('electron');
 const path = require('path');
-const BrowserWindow = electron.remote.BrowserWindow;
 
-const closediv = document.getElementById('link-close');
+
+//change display data IPC
+ipcRenderer.on('async-mc-resp', (event, arg) => {
+  var datamc = document.getElementById('datainfo')
+
+  datamc.innerHTML = arg
+})
+
+const closediv = document.getElementById('linkclose');
 
 closediv.addEventListener('click', function(event){
   var window = remote.getCurrentWindow();

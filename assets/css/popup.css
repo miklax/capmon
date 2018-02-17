@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css?family=Orbitron|Roboto');
+
+/* * {
+  border: 1px solid yellow;
+} */
+
+body {
+  margin:0;
+  font-family: 'Roboto';
+}
+
+.container {
+  background: #27262e;
+  color:#e5e0cc;
+}
+
+/* *****************POPUP***************** */
+.container-popup{
+  position: relative;
+  color: white;
+  font-family: Orbitron;
+  display: inline-block;
+}
+
+.container-popup .datainfo{
+  display: inline-block;
+  float: left;
+  height: 25px;
+  line-height: 25px;
+  padding-left: 5px;
+  -webkit-app-region: drag;
+  /* cursor: move; */
+  /* padding: 5px; */
+  width: 235px;
+  background: rgba(0,0,0,0.6);
+}
+
+.container-popup a{
+  position: relative;
+  float: right;
+  display: block;
+  z-index: 100;
+  width: 21px;
+  height: 21px;
+  margin: 2px;
+  text-align: center;
+  line-height: 20px;
+  background: rgba(255,0,0,0.5);
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}

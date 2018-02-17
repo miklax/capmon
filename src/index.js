@@ -1,6 +1,7 @@
 const electron = require('electron');
 const path = require('path');
 const BrowserWindow = electron.remote.BrowserWindow;
+const { ipcRenderer } = require('electron');
 
 const axios = require('axios');
 
@@ -33,6 +34,7 @@ function getMarketCapVal() {
     else
     mcvalue.style.color = "#f42b56";
 
+    ipcRenderer.send('async-mc', currentVal.toLocaleString('en'))
     oldValue = currentVal;
   })
 }
@@ -43,20 +45,21 @@ setInterval(getMarketCapVal, 30000);
 
 function openOverhead(){
 
-  //nadji prozor ako je aktivan i ugasi ako se decekira!
-
   const htmlPath = path.join('file://', __dirname, 'popup.html');
   let winpopup = new BrowserWindow({
     frame: false,
     transparent: true,
     alwaysOnTop: true,
-    width: 250,
-    height: 25
+    width: 350,
+    height: 35
   });
 
-  winpopup.isResizable(false);
+  winpopup.isResizable(true);
 
   winpopup.on('close', function() { win = null });
   winpopup.loadURL(htmlPath);
   winpopup.show();
+
+  //DevTools
+  winpopup.webContents.openDevTools()
 }

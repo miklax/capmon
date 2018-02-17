@@ -5,10 +5,10 @@
 } */
 
 body {
-    margin:0;
-    font-family: 'Roboto';
-    background: #27262e;
-    color:#e5e0cc;
+  margin:0;
+  font-family: 'Roboto';
+  background: #27262e;
+  color:#e5e0cc;
 }
 
 .container {
@@ -25,44 +25,6 @@ body {
 
 .form-obj{
   padding: 10px;
-}
-
-
-/* *****************POPUP***************** */
-.container-popup{
-  position: relative;
-  color: white;
-  font-family: Orbitron;
-  display: inline-block;
-}
-
-.container-popup .dataInfo{
-  display: inline-block;
-  height: 25px;
-  cursor: move;
-  -webkit-app-cursor: move;
-  line-height: 25px;
-  padding-left: 5px;
-  /* padding: 5px; */
-  width: 235px;
-  background: rgba(0,0,0,0.6);
-  -webkit-app-region: drag;
-}
-
-.container-popup a{
-  position: absolute;
-  display: inline-block;
-  z-index: 100;
-  width: 21px;
-  height: 21px;
-  margin: 2px;
-  right: 0;
-  top: 0;
-  text-align: center;
-  line-height: 20px;
-  background: rgba(255,0,0,0.5);
-  color: white;
-  text-decoration: none;
 }
 
 /* DONTIONS  */
@@ -86,7 +48,6 @@ body {
 .about-container a{
   color: white;
 }
-
 
 /* svetlo plava za dugme
 #38a7e1
