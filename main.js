@@ -56,7 +56,6 @@ function createWindow () {
 ]);
 
 Menu.setApplicationMenu(template);
-
 }
 
 app.on('ready', createWindow)

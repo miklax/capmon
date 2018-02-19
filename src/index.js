@@ -29,7 +29,7 @@ function getMarketCapVal() {
     const currentVal = result.data.total_market_cap_usd;
     mcvalue.innerHTML = currentVal.toLocaleString('en');
 
-    if (currentVal > oldValue)
+    if (currentVal >= oldValue)
     mcvalue.style.color = "#49c398";
     else
     mcvalue.style.color = "#f42b56";
@@ -63,3 +63,7 @@ function openOverhead(){
   //DevTools
   winpopup.webContents.openDevTools()
 }
+
+ipcRenderer.on('async-mc-resp', (event, arg) => {
+  alert(arg)
+})

@@ -22,7 +22,7 @@ body {
   display: inline-block;
 }
 
-.container-popup .datainfo{
+#datainfo{
   display: inline-block;
   float: left;
   height: 25px;
