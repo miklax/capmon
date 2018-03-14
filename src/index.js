@@ -5,9 +5,14 @@ const { ipcRenderer } = require('electron');
 
 const axios = require('axios');
 
+let winpopup
+
 var mcvalue = document.getElementById('mcval');
 var oldValue = 0;
 var intervalStatus = null;
+
+
+
 
 //function Voice
 function playVoice(){
@@ -46,7 +51,7 @@ setInterval(getMarketCapVal, 30000);
 function openOverhead(){
 
   const htmlPath = path.join('file://', __dirname, 'popup.html');
-  let winpopup = new BrowserWindow({
+  winpopup = new BrowserWindow({
     frame: false,
     transparent: true,
     alwaysOnTop: true,
@@ -64,6 +69,6 @@ function openOverhead(){
   winpopup.webContents.openDevTools()
 }
 
-ipcRenderer.on('async-mc-resp', (event, arg) => {
-  alert(arg)
-})
+// ipcRenderer.on('async-mc-resp', (event, arg) => {
+//   alert(arg)
+// })

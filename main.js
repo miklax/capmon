@@ -2,6 +2,7 @@ const {app, BrowserWindow, Menu, ipcMain} = require('electron')
 const path = require('path')
 const url = require('url')
 
+//global window zbog garbage collector.
 let win
 
 function createWindow () {
@@ -110,5 +111,5 @@ function createDonation(){
 // IPC IPC IPC
 ipcMain.on('async-mc', (event, arg) => {
   console.log('recieve ' + arg)
-  event.sender.send('async-mc-resp', arg)
+  winpopup.webContents.send('async-mc-resp', arg)
 })
