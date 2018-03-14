@@ -50,23 +50,23 @@ setInterval(getMarketCapVal, 30000);
 
 function openOverhead(){
 
-  const htmlPath = path.join('file://', __dirname, 'popup.html');
-  winpopup = new BrowserWindow({
-    frame: false,
-    transparent: true,
-    alwaysOnTop: true,
-    width: 350,
-    height: 35
-  });
+//   const htmlPath = path.join('file://', __dirname, 'popup.html');
+//   winpopup = new BrowserWindow({
+//     frame: false,
+//     transparent: true,
+//     alwaysOnTop: true,
+//     width: 350,
+//     height: 35
+//   });
 
-  winpopup.isResizable(true);
+//   winpopup.isResizable(true);
 
-  winpopup.on('close', function() { win = null });
-  winpopup.loadURL(htmlPath);
-  winpopup.show();
+//   winpopup.on('close', function() { win = null });
+//   winpopup.loadURL(htmlPath);
+//   winpopup.show();
 
-  //DevTools
-  winpopup.webContents.openDevTools()
+//   //DevTools
+//   winpopup.webContents.openDevTools()
 }
 
 // ipcRenderer.on('async-mc-resp', (event, arg) => {

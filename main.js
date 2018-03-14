@@ -4,6 +4,8 @@ const url = require('url')
 
 //global window zbog garbage collector.
 let win
+let winpopup
+
 
 function createWindow () {
   // Create the browser window.
@@ -17,46 +19,63 @@ function createWindow () {
     slashes: true
   }))
 
-  // Open the DevTools.
-  // win.webContents.openDevTools()
+
+  win.webContents.openDevTools()
+
 
   // Emitted when the window is closed.
   win.on('closed', () => {
-
     win = null
     app.quit(); //close all windows and quit.
-
   })
 
+  //create popup window
+  const htmlPath = path.join('file://', __dirname, 'src/popup.html');
+  winpopup = new BrowserWindow({
+    frame: false,
+    transparent: true,
+    alwaysOnTop: true,
+    width: 350,
+    height: 35
+  });
+
+  winpopup.isResizable(true);
+
+  winpopup.on('close', function() { win = null });
+  winpopup.loadURL(htmlPath);
+  // winpopup.show();
+
+  //DevTools
+  winpopup.webContents.openDevTools()
+
   var template = Menu.buildFromTemplate([
-  {
-    label: 'Info',
-    submenu: [
-      {
-        label: 'Donate',
-        click() {
-          createDonation();
-        }
-       },
-      {
-        label: 'About',
-        click() {
-          createAbout();
-        }
-     },
-      {type: 'separator'},
-      {
-        label: 'Exit',
-        click() {
-          app.quit();
-        }
-      },
-    ]
-  },
+    {
+      label: 'Info',
+      submenu: [
+        {
+          label: 'Donate',
+          click() {
+            createDonation();
+          }
+        },
+        {
+          label: 'About',
+          click() {
+            createAbout();
+          }
+        },
+        {type: 'separator'},
+        {
+          label: 'Exit',
+          click() {
+            app.quit();
+          }
+        },
+      ]
+    },
+  ]);
 
-]);
-
-Menu.setApplicationMenu(template);
+  Menu.setApplicationMenu(template);
 }
 
 app.on('ready', createWindow)
