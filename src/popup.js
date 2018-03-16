@@ -1,12 +1,11 @@
-const ipcRenderer = require('ipcRenderer');
 const remote = require('electron').remote;
 const path = require('path');
+const { ipcRenderer } = require('electron');
 
 var datamc = document.getElementById('datainfo');
 
 // change display data IPC
 ipcRenderer.on('async-mc-resp', (event, arg) => {
-  alert(arg);
   datamc.innerHTML = arg;
 })
 

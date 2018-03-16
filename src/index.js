@@ -11,9 +11,6 @@ var mcvalue = document.getElementById('mcval');
 var oldValue = 0;
 var intervalStatus = null;
 
-
-
-
 //function Voice
 function playVoice(){
 
@@ -47,28 +44,12 @@ function getMarketCapVal() {
 getMarketCapVal();
 setInterval(getMarketCapVal, 30000);
 
-
 function openOverhead(){
 
-//   const htmlPath = path.join('file://', __dirname, 'popup.html');
-//   winpopup = new BrowserWindow({
-//     frame: false,
-//     transparent: true,
-//     alwaysOnTop: true,
-//     width: 350,
-//     height: 35
-//   });
-
-//   winpopup.isResizable(true);
-
-//   winpopup.on('close', function() { win = null });
-//   winpopup.loadURL(htmlPath);
-//   winpopup.show();
-
-//   //DevTools
-//   winpopup.webContents.openDevTools()
+  if(document.getElementById('overhead').checked){
+    ipcRenderer.send('window-state', true)
+  } else {
+    ipcRenderer.send('window-state', false)
+  }
+//TODO: staviti togle ipc render
 }
-
-// ipcRenderer.on('async-mc-resp', (event, arg) => {
-//   alert(arg)
-// })

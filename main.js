@@ -5,7 +5,8 @@ const url = require('url')
 //global window zbog garbage collector.
 let win
 let winpopup
-
+let winState = false
+let mcValueUpdate = 0
 
 function createWindow () {
   // Create the browser window.
@@ -19,34 +20,13 @@ function createWindow () {
     slashes: true
   }))
 
-
   win.webContents.openDevTools()
-
 
   // Emitted when the window is closed.
   win.on('closed', () => {
     win = null
     app.quit(); //close all windows and quit.
   })
-
-  //create popup window
-  const htmlPath = path.join('file://', __dirname, 'src/popup.html');
-  winpopup = new BrowserWindow({
-    frame: false,
-    transparent: true,
-    alwaysOnTop: true,
-    width: 350,
-    height: 35
-  });
-
-  winpopup.isResizable(true);
-
-  winpopup.on('close', function() { win = null });
-  winpopup.loadURL(htmlPath);
-  // winpopup.show();
-
-  //DevTools
-  winpopup.webContents.openDevTools()
 
   var template = Menu.buildFromTemplate([
     {
@@ -76,6 +56,32 @@ function createWindow () {
   ]);
 
   Menu.setApplicationMenu(template);
+}
+
+function overheadWindow(state){
+  if (state){
+      //create popup window
+    const htmlPath = path.join('file://', __dirname, 'src/popup.html');
+    winpopup = new BrowserWindow({
+      frame: false,
+      transparent: true,
+      alwaysOnTop: true,
+      width: 350,
+      height: 35
+    });
+
+    winpopup.isResizable(true);
+
+    winpopup.loadURL(htmlPath);
+    // winpopup.show();
+    
+    //DevTools
+    winpopup.webContents.openDevTools()
+    winpopup.webContents.send('async-mc-resp', mcValueUpdate)
+  } else {
+    winpopup.close()
+    winpopup.on('close', function() { winpopup = null });
+  }
 }
 
 app.on('ready', createWindow)
@@ -128,7 +134,17 @@ function createDonation(){
 }
 
 // IPC IPC IPC
+// update overhead window with data
 ipcMain.on('async-mc', (event, arg) => {
-  console.log('recieve ' + arg)
-  winpopup.webContents.send('async-mc-resp', arg)
+  console.log('recieved ' + arg)
+  mcValueUpdate = arg
+  if (winState) {
+    winpopup.webContents.send('async-mc-resp', mcValueUpdate)
+  }
+})
+
+//on/off overead window
+ipcMain.on('window-state', (event, state) => {
+  winState = state
+  overheadWindow(state)
 })
