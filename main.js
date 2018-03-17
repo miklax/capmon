@@ -76,8 +76,8 @@ function overheadWindow(state){
     // winpopup.show();
     
     //DevTools
-    winpopup.webContents.openDevTools()
-    winpopup.webContents.send('async-mc-resp', mcValueUpdate)
+    //winpopup.webContents.openDevTools()
+    sendToPopup(winState)
   } else {
     winpopup.close()
     winpopup.on('close', function() { winpopup = null });
@@ -138,9 +138,8 @@ function createDonation(){
 ipcMain.on('async-mc', (event, arg) => {
   console.log('recieved ' + arg)
   mcValueUpdate = arg
-  if (winState) {
-    winpopup.webContents.send('async-mc-resp', mcValueUpdate)
-  }
+  console.log('mcValueUpdate ' + mcValueUpdate)
+  sendToPopup(winState)
 })
 
 //on/off overead window
@@ -148,3 +147,9 @@ ipcMain.on('window-state', (event, state) => {
   winState = state
   overheadWindow(state)
 })
+
+function sendToPopup(wstate){
+  if (wstate) {
+    winpopup.webContents.send('async-mc-resp', mcValueUpdate)
+  }
+}

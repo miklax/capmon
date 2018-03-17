@@ -51,5 +51,4 @@ function openOverhead(){
   } else {
     ipcRenderer.send('window-state', false)
   }
-//TODO: staviti togle ipc render
 }
