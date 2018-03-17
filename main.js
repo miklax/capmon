@@ -148,6 +148,14 @@ ipcMain.on('window-state', (event, state) => {
   overheadWindow(state)
 })
 
+ipcMain.on('window-created', (event, arg) => {
+  sendToPopup(arg)
+})
+
+ipcMain.on('popup-closed', (event) =>{
+  win.webContents.send('popup-closed-resp')
+})
+
 function sendToPopup(wstate){
   if (wstate) {
     winpopup.webContents.send('async-mc-resp', mcValueUpdate)

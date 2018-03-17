@@ -52,3 +52,8 @@ function openOverhead(){
     ipcRenderer.send('window-state', false)
   }
 }
+
+//change checkbox state on popup close
+ipcRenderer.on('popup-closed-resp', (event) => {
+  document.getElementById('overhead').checked = false
+})
