@@ -16,7 +16,7 @@ function toggleVoiceTimer(){
 
   if(document.getElementById('voice').checked){
     playVoice()
-    intervalStatus = setInterval(playVoice, 10000); //500000 za 5m
+    intervalStatus = setInterval(playVoice, 500000);
   } else {
     clearInterval(intervalStatus);
   }
