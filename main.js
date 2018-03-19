@@ -10,7 +10,10 @@ let mcValueUpdate = 0
 
 function createWindow () {
   // Create the browser window.
-  win = new BrowserWindow({width: 550, height: 220})
+  win = new BrowserWindow({
+    width: 550,
+    height: 220,
+    icon: path.join(__dirname, 'assets/icons/png/64x64.png')})
   win.setResizable(false);
 
   // and load the index.html of the app.

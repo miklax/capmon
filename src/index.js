@@ -62,3 +62,7 @@ function openOverhead(){
 ipcRenderer.on('popup-closed-resp', (event) => {
   document.getElementById('overhead').checked = false
 })
+
+function openIpcDonate() {
+  alert('click')
+}
