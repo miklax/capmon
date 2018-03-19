@@ -12,15 +12,20 @@ var oldValue = 0;
 var intervalStatus = null;
 
 //function Voice
-function playVoice(){
+function toggleVoiceTimer(){
 
   if(document.getElementById('voice').checked){
-    intervalStatus = setInterval(function(){
-      let msg = new SpeechSynthesisUtterance(mcvalue.innerHTML.slice(0,-12));
-      window.speechSynthesis.speak(msg);
-    }, 500000);
+    playVoice()
+    intervalStatus = setInterval(playVoice, 10000); //500000 za 5m
   } else {
     clearInterval(intervalStatus);
+  }
+
+  function playVoice (){
+    let msg = new SpeechSynthesisUtterance(mcvalue.innerHTML.slice(0,-12) * 1000000000);
+    console.log(msg)
+    window.speechSynthesis.speak(msg);
+    console.log('SOUND')
   }
 };
 

@@ -136,9 +136,9 @@ function createDonation(){
 // IPC IPC IPC
 // update overhead window with data
 ipcMain.on('async-mc', (event, arg) => {
-  console.log('recieved ' + arg)
+  // console.log('recieved ' + arg)
   mcValueUpdate = arg
-  console.log('mcValueUpdate ' + mcValueUpdate)
+  // console.log('mcValueUpdate ' + mcValueUpdate)
   sendToPopup(winState)
 })
 
