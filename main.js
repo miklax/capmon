@@ -162,7 +162,7 @@ ipcMain.on('popup-closed', (event) =>{
 
 function sendToPopup(wstate){
 
-  console.log(wstate)
+  // console.log(wstate)
   try{
     if (wstate) {
       winpopup.webContents.send('async-mc-resp', mcValueUpdate) 
