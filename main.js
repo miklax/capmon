@@ -155,12 +155,21 @@ ipcMain.on('window-created', (event, arg) => {
   sendToPopup(arg)
 })
 
+//toggle checkbox to off
 ipcMain.on('popup-closed', (event) =>{
   win.webContents.send('popup-closed-resp')
 })
 
 function sendToPopup(wstate){
-  if (wstate) {
-    winpopup.webContents.send('async-mc-resp', mcValueUpdate)
+
+  console.log(wstate)
+  try{
+    if (wstate) {
+      winpopup.webContents.send('async-mc-resp', mcValueUpdate) 
+    }
+  }
+  catch(error){
+    console.log(error)
   }
 }
+

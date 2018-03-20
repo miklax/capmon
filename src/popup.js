@@ -15,6 +15,7 @@ ipcRenderer.on('async-mc-resp', (event, arg) => {
 const closediv = document.getElementById('linkclose');
 
 closediv.addEventListener('click', function(event){
+  ipcRenderer.send('window-state', false)
   ipcRenderer.send('popup-closed')
   var window = remote.getCurrentWindow();
   window.close();
