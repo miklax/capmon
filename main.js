@@ -159,7 +159,12 @@ ipcMain.on('window-created', (event, arg) => {
 
 //toggle checkbox to off
 ipcMain.on('popup-closed', (event) =>{
-  win.webContents.send('popup-closed-resp')
+  try{
+    win.webContents.send('popup-closed-resp')
+  }
+  catch(error){
+    console.log(error)
+  }
 })
 
 //open donate remote
