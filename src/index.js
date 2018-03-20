@@ -66,3 +66,8 @@ ipcRenderer.on('popup-closed-resp', (event) => {
 function openIpcDonate() {
   alert('click')
 }
+
+
+function openIpcDonate(){
+  ipcRenderer.send('open-donate-window')
+}

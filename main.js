@@ -111,7 +111,8 @@ function createAbout(){
   const htmlPath = path.join('file://', __dirname, 'src/about.html');
   let aboutw = new BrowserWindow({
     width: 450,
-    height: 350
+    height: 420,
+    icon: path.join(__dirname, 'assets/icons/png/64x64.png')
   });
 
   aboutw.isResizable(false);
@@ -126,7 +127,8 @@ function createDonation(){
   const htmlPath = path.join('file://', __dirname, 'src/donations.html');
   let windonate = new BrowserWindow({
     width: 450,
-    height: 350
+    height: 350,
+    icon: path.join(__dirname, 'assets/icons/png/64x64.png')
   });
 
   windonate.isResizable(false);
@@ -159,6 +161,12 @@ ipcMain.on('window-created', (event, arg) => {
 ipcMain.on('popup-closed', (event) =>{
   win.webContents.send('popup-closed-resp')
 })
+
+//open donate remote
+ipcMain.on('open-donate-window', (event) => {
+  createDonation()
+})
+
 
 function sendToPopup(wstate){
 
