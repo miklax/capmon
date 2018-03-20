@@ -73,7 +73,7 @@ function overheadWindow(state){
       height: 35
     });
 
-    winpopup.isResizable(true);
+    winpopup.isResizable(false);
 
     winpopup.loadURL(htmlPath);
     // winpopup.show();

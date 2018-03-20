@@ -1,54 +1,37 @@
 @import url('https://fonts.googleapis.com/css?family=Orbitron|Roboto');
 
-/* * {
-  border: 1px solid yellow;
-} */
-
 body {
   margin:0;
-  font-family: 'Roboto';
-  cursor: move;
+  padding: 0;
+  -webkit-app-region: drag;
+  
 }
 
-.container {
-  background: #27262e;
-  color:#e5e0cc;
-}
 
-/* *****************POPUP***************** */
-.container-popup{
-  position: relative;
-  color: white;
+#container-popup {
   font-family: Orbitron;
-  display: inline-block;
+  color: white;
+  font-size: 0.8em;
+  
 }
 
-#datainfo{
-  /* display: inline-block; */
-  float: left;
+#datainfo {
+  display: inline-block;
+  padding: 0 10px;
+  background-color: rgba(0,0,0,0.6);
+  cursor: move;
   height: 25px;
   line-height: 25px;
-  padding-left: 5px;
-  -webkit-app-region: drag;
-  /* cursor: move; */
-  /* padding: 5px; */
-  width: 235px;
-  background: rgba(0,0,0,0.6);
-  cursor: move;
 }
 
-.container-popup a{
-  position: relative;
-  float: right;
-  display: block;
-  z-index: 100;
-  width: 21px;
-  height: 21px;
-  margin: 2px;
-  text-align: center;
-  line-height: 20px;
-  background: rgba(255,0,0,0.5);
-  color: white;
-  text-decoration: none;
+#linkclose {
+  -webkit-app-region: no-drag;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  display: inline-block;
+  background-color: rgba(255,0,0,0.5);
   cursor: pointer;
+  text-align: center;
 }
+
