@@ -13,7 +13,9 @@ Simple and small monitoring tool that will show current **Total Market Capitaliz
 ## Installation
 Install using **git clone, npm install, npm start**
 
-or download release builds for [Linux, Windows or macOS](https://github.com/miklax/capmon/releases/latest)
+or download release builds for [Windows](https://github.com/miklax/capmon/releases/latest)
+
+**macOS** and **Linux** version coming soon.
 
 ## Version history
 **0.1.3**
