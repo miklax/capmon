@@ -10,8 +10,13 @@ Simple and small monitoring tool that will show current **Total Market Capitaliz
 
 ![Image of the monitoring window](https://github.com/miklax/capmon/blob/master/assets/screenshots/monitor.gif)
 
+## Installation
+Install using **git clone, npm install, npm start**
+
+or download release builds for ![Linux, Windows or macOS](https://github.com/miklax/capmon/releases/latest)
+
 ## Version history
-**0.1.2**
+**0.1.3**
 Initial Release
 
 ## Donate
