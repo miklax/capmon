@@ -22,10 +22,8 @@ or download release build for [Windows](https://github.com/miklax/capmon/release
 Initial Release
 
 ## Donate
+**BTC:** 1CGTVtzRgpijKCN29GURSwmHoS5cwjsSie
+
 **ETH:** 0xDF7F3ec9d1c38ec1F835a18e950cE87c6445Ae3b
 
 **NEO:** AHJVDq65hfiyE8BZuahCKZJ8wpF3hDroXL
-
-**BTC:** 1CGTVtzRgpijKCN29GURSwmHoS5cwjsSie
-
-**LTC:** LPY8Hhv7YuXjqrEn4zAS9NK7YGeZUgp6M6
